@@ -28,7 +28,7 @@ export class ClockComponent implements OnInit, OnDestroy {
 
   updateTime(): void{
     const now = new Date();
-    const formattedTime = this.datePipe.transform(now, 'hh:mm:ss');
+    const formattedTime = this.datePipe.transform(now, 'hh:mm:ss a');
     if(formattedTime !== null){
       this.currentTime = formattedTime;
       this.changeColor();
@@ -39,7 +39,6 @@ export class ClockComponent implements OnInit, OnDestroy {
 
   changeColor(): void {
     const randomColor = '#' +Math.floor(Math.random()*16777215).toString(16);
-    // document.getElementById('clock-display').style.color = randomColor;
     const clockDisplayElement = document.getElementById('clock-display');
     if(clockDisplayElement !== null){
       clockDisplayElement.style.color = randomColor;
