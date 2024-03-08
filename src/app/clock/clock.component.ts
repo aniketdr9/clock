@@ -9,6 +9,7 @@ import { Subscription, interval } from 'rxjs';
 })
 export class ClockComponent implements OnInit, OnDestroy {
   currentTime: string = '';
+  currentDay: string = new Date().toDateString();
   private subscription: Subscription = new Subscription();
 
   constructor(
@@ -29,8 +30,10 @@ export class ClockComponent implements OnInit, OnDestroy {
   updateTime(): void{
     const now = new Date();
     const formattedTime = this.datePipe.transform(now, 'hh:mm:ss a');
+    // const formattedDate = this.datePipe.transform(now, 'MMM d y')
     if(formattedTime !== null){
       this.currentTime = formattedTime;
+      // this.currentDay = formattedDate;
       this.changeColor();
     } else {
       console.error("Error: Formatted time is null")
