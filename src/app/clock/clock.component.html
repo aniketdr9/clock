@@ -1,4 +1,20 @@
-<div id="clock-display">
-    <p>{{ currentDay }}</p>
-    <span>{{ currentTime }}</span>
+<div class="container">
+    <div id="clock-display">
+        <div class="time-block">
+            <span class="clock-value">{{ currentDay }}</span>
+            <span class="clock-key">Day</span>
+        </div>
+        <div class="time-block">
+            <span class="clock-value">{{ currentHour }}</span>
+            <span class="clock-key">Hour</span>
+        </div>
+        <div class="time-block">
+            <span class="clock-value">{{ currentMinute }}</span>
+            <span class="clock-key">Minute</span>
+        </div>
+        <div class="time-block">
+            <span class="clock-value">{{ currentSecond }}</span>
+            <span class="clock-key">Second</span>
+        </div>
+    </div>
 </div>
